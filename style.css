@@ -1,4 +1,29 @@
 article {
-    max-width: 65ch;
-    margin-inline: auto;
+  --side-space: clamp(1.2rem, 7vw, 3.5rem);
+  --wide: minmax(var(--side-space), 1fr);
+  --main: min(62ch, 100% - var(--side-space) * 2);
+  --highlight: minmax(0, 7.5rem);
+
+  display: grid;
+  grid-template-columns:
+    [edge-start] var(--wide)
+    [breakout-start] var(--highlight)
+    [main-start] var(--main) [main-end]
+    var(--highlight) [breakout-end]
+    var(--wide) [edge-end];
+  gap: 1.5rem 0;
+}
+
+article > * {
+  grid-column: main;
+}
+
+article > blockquote {
+  grid-column: breakout;
+}
+
+article > img {
+  grid-column: edge;
+  display: block;
+  width: 100%;
 }
