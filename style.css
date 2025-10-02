@@ -20,7 +20,6 @@ article {
   padding: 1rlh;
   max-inline-size: 1200px;
   margin-inline: auto;
-  /* display: grid; */
   gap: 1.5rlh;
 
   @media (width > 768px) {
