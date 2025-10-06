@@ -1,2 +1,23 @@
-/* Dine styles her */
-article {}
+article {
+  --flow-space: 0.5rlh;
+}
+
+article * {
+  margin: 0;
+}
+
+article :where(* + *) {
+  margin-top: var(--flow-space);
+}
+
+article h2 {
+  --flow-space: 2rlh;
+}
+
+article h3 {
+  --flow-space: 1rlh;
+}
+
+article h3 + * {
+  --flow-space: 0.25rlh;
+}
